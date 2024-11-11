@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pabucplus - Yapım Aşamasında</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .container {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #ff6347;
+        }
+        p {
+            font-size: 1.2rem;
+            margin: 15px 0;
+        }
+        .loader {
+            border: 8px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 8px solid #ff6347;
+            width: 80px;
+            height: 80px;
+            animation: spin 2s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* Fotoğraf Bölümü */
+        .photo-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .photo {
+            width: 200px;
+            height: 150px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: #666;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pabucplus</h1>
+        <div class="loader"></div>
+        <p>Web sitemiz yapım aşamasında. En kısa sürede sizlerle olacağız!</p>
+        <p>İş güvenliği malzemeleriniz için en doğru adres...</p>
+
+        <!-- Fotoğraf Bölümü -->
+        <div class="photo-section">
+            <div class="photo">Fotoğraf 1</div>
+            <div class="photo">Fotoğraf 2</div>
+            <div class="photo">Fotoğraf 3</div>
+            <div class="photo">Fotoğraf 4</div>
+            <!-- Daha fazla fotoğraf ekleyebilirsiniz -->
+        </div>
+    </div>
+</body>
+</html>
