@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PDF OCR ve Fotoğraf Yerleştirme</title>
+  <title>PDF Text-Based Photo Overlay</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2.1.5/dist/tesseract.min.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -29,8 +28,8 @@
     }
     .photo-overlay {
       position: absolute;
-      top: 10px;
-      right: 10px;
+      top: 110px;
+      right: 110px;
       width: 100px;
       height: 100px;
       background-size: cover;
@@ -40,9 +39,9 @@
   </style>
 </head>
 <body>
-  <h1>PDF OCR ve Fotoğraf Yerleştirme</h1>
+  <h1>PDF Text-Based Photo Overlay</h1>
   <form id="upload-form">
-    <label for="file-input">PDF dosyasını seçin:</label>
+    <label for="file-input">Select a PDF file:</label>
     <input type="file" id="file-input" accept="application/pdf">
   </form>
 

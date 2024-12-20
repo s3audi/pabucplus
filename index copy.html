@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pabucplus - Yapım Aşamasında</title>
+    <style>
+        /* Temel stil ayarları */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            overflow: hidden;
+        }
+        /* Slider alanı */
+        .slider {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1s ease-in-out;
+        }
+        /* Fotoğraf URL'leri */
+        .slider.bg1 { background-image: url('https://sun9-23.userapi.com/s/v1/ig2/cAmRGasF0qCU467YrMdrsNfJt-GAByPXUJINJQKc0T4edcT7KT67v3Y5Tf34kcgCvABBcmBpIMMkihrd32ygiSmA.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480,720x540,1080x810,1280x960&from=bu&u=HyGnZ8NyGIZAPKnL8hAPxraGoRapCHHOrqhLAX3ifRY&cs=1280x960'); }
+        .slider.bg2 { background-image: url('https://sun9-35.userapi.com/impg/Vv19KHxwKLz3n_4wsI4B1PKhcPMCgBwJ-RIGwQ/9_Aj1dNz1H0.jpg?size=1280x960&quality=95&sign=33a20311cd698378780b288ea1be7eda&type=album'); }
+        .slider.bg3 { background-image: url('https://sun9-10.userapi.com/impg/U4qfM_0zxO3i_or505OvkdGFshw_5xkwyTgxOg/b2pscmakDvQ.jpg?size=1120x1120&quality=95&sign=a2a8462e0d04d5b3a9fca6ad95a83522&type=album'); }
+
+        /* Marka adı */
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+        }
+        /* Ortadaki içerik */
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .content h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        /* Yükleyici animasyon */
+        .loader {
+            border: 8px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 8px solid #ff6347;
+            width: 80px;
+            height: 80px;
+            animation: spin 2s linear infinite;
+            margin-top: 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* Slider değiştirme ikonları */
+        .nav-dots {
+            position: absolute;
+            bottom: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .dot:hover, .dot.active {
+            background-color: #ff6347;
+        }
+    </style>
+</head>
+<body>
+    <!-- Slider -->
+    <div class="slider bg1" id="slider">
+        <!-- Marka adı -->
+        <div class="logo">Pabucplus</div>
+        
+        <!-- İçerik -->
+        <div class="content">
+            <h1>Sitemiz Yapım Aşamasında</h1>
+            <div class="loader"></div>
+        </div>
+        
+        <!-- Slider Düğmeleri -->
+        <div class="nav-dots">
+            <div class="dot" onclick="changeSlide(1)"></div>
+            <div class="dot" onclick="changeSlide(2)"></div>
+            <div class="dot" onclick="changeSlide(3)"></div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 3;
+
+        // Slider değiştirme fonksiyonu
+        function changeSlide(slide) {
+            currentSlide = slide;
+            updateSlider();
+        }
+
+        // Slider arka planını güncelleme
+        function updateSlider() {
+            const slider = document.getElementById("slider");
+            slider.className = `slider bg${currentSlide}`;
+            document.querySelectorAll('.dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index + 1 === currentSlide);
+            });
+        }
+
+        // Fare üzerine gelince otomatik değişme
+        document.getElementById("slider").addEventListener("mouseenter", () => {
+            currentSlide = currentSlide < totalSlides ? currentSlide + 1 : 1;
+            updateSlider();
+        });
+    </script>
+</body>
+</html>
